@@ -11,21 +11,12 @@ As mentioned above, this isn't the way I would tend to deploy applications into 
 
 ## Running it
 
+Log into https://shell.azure.com
+
 Clone the repo
 
 ```
 git clone https://github.com/JimPaine/terraform-minecraft-server.git
-```
-Log in
-
-```
-az login
-```
-
-Optionally set a subscription
-
-```
-az account set --subscription {id}
 ```
 
 Navigate to the Terraform scripts
