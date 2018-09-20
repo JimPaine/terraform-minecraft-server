@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft Service
+After=network.target
+
+[Service]
+User=root
+Restart=always
+Type=simple
+WorkingDirectory=/minecraft
+ExecStart=/minecraft/bedrock_server
+
+[Install]
+WantedBy=multi-user.target

@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+**/config/local.whitelist.json
+**/config/local.ops.json
