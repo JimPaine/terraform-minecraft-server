@@ -64,11 +64,11 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "remote-exec" {
     inline = [
-      "mkdir /minecraft",
-      "cd /minecraft",
+      "mkdir ~/minecraft",
+      "cd ~/minecraft",
       "wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.6.1.0.zip",
       "unzip bedrock-server-1.6.1.0.zip",     
-      "sudo cp /minecraft/libCrypto.so /usr/lib/libCrypto.so",
+      "sudo mv ~/minecraft/libCrypto.so /usr/lib/libCrypto.so",
       "sudo ldconfig -v | grep libCrypto.so",
     ]
 
@@ -95,7 +95,7 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "file" {
     source = "../config/minecraft-server.service",
-    destination = "/minecraft-server.service"
+    destination = "~/minecraft-server.service"
 
     connection {
         type     = "ssh"
@@ -106,7 +106,7 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "file" {
     source = "../config/whitelist.json",
-    destination = "/minecraft/whitelist.json"
+    destination = "~/minecraft/whitelist.json"
 
     connection {
         type     = "ssh"
@@ -117,7 +117,7 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "file" {
     source = "../config/ops.json",
-    destination = "/minecraft/ops.json"
+    destination = "~/minecraft/ops.json"
 
     connection {
         type     = "ssh"
@@ -128,7 +128,7 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "file" {
     source = "../config/server.properties",
-    destination = "/minecraft/server.properties"
+    destination = "~/minecraft/server.properties"
 
     connection {
         type     = "ssh"
@@ -139,7 +139,7 @@ resource "azurerm_virtual_machine" "main" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo cp /minecraft-server.service /etc/systemd/system/minecraft-server.service",
+      "sudo mv ~/minecraft-server.service /etc/systemd/system/minecraft-server.service",
       "sudo systemctl daemon-reload",
       "sudo systemctl enable minecraft-server",
       "sudo systemctl start minecraft-server",

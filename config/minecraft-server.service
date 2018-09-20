@@ -6,8 +6,8 @@ After=network.target
 User=root
 Restart=always
 Type=simple
-WorkingDirectory=/minecraft
-ExecStart=/minecraft/bedrock_server
+WorkingDirectory=/home/minecraftadmin/minecraft
+ExecStart=/home/minecraftadmin/minecraft/bedrock_server
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.targetg
