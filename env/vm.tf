@@ -52,7 +52,7 @@ resource "azurerm_virtual_machine" "main" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install unzip",
-      "sudo apt-get install libcurl3 libcurl3-dev",
+      "sudo apt-get install libcurl4",
     ]
 
     connection {
