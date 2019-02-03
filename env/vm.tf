@@ -66,7 +66,7 @@ resource "azurerm_virtual_machine" "main" {
     inline = [
       "mkdir ~/minecraft",
       "cd ~/minecraft",
-      "wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.6.1.0.zip",
+      "wget https://minecraft.azureedge.net/bin-linux/bedrock-server-1.8.1.2.zip",
       "unzip bedrock-server-1.6.1.0.zip",     
       "sudo mv ~/minecraft/libCrypto.so /usr/lib/libCrypto.so",
       "sudo ldconfig -v | grep libCrypto.so",
