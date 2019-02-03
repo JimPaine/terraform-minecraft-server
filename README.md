@@ -41,9 +41,9 @@ Once it has completed capture the details from the output and add the server to 
 
 In /env/nsg.tf I would recommended filtering the ssh rule by your IP address to ensure that it is at least filterd slightly. Even better would to remove the rule all together and re-run the terraform apply command, this way only the Minecraft ports are open. If you do need to get access to the vm add the rule back in and re-run the apply.
 
-In /config there are three files, ops.json, whitelist.json and server.properties. In server.properties I would recommend setting whitelist to true and then adding your uuid and name to both the ops and whitelist files.
+In /config there are three files, ops.json, whitelist.json and server.properties. In server.properties I would recommend setting whitelist to true and then adding your uuid and name to both the permissions and whitelist files.
 
-ops.json
+permissions.json
 
 ```
 [
