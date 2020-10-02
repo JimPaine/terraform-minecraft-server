@@ -49,7 +49,7 @@ permissions.json
 [
     {
       "uuid": "781db3a4-7765-4dd3-bbf1-3d7955e6fc6d",
-      "name": "SocklessCoder",
+      "name": "GamerTag",
       "level": 4
     }
 ]
@@ -60,7 +60,7 @@ whitelist.json
 [
     {
       "uuid": "781db3a4-7765-4dd3-bbf1-3d7955e6fc6d",
-      "name": "SocklessCoder"
+      "name": "GamerTag"
     }
 ]
 ```
